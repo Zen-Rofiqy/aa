@@ -1,0 +1,327 @@
+* {
+    font-family: "Kavoon", "Indie Flower", "Caveat Brush", "Permanent Marker";
+}
+
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:100vh;
+  background-color: #00bbf9;
+}
+
+/* Bday Card */
+.birthdayCard {
+  position: relative;
+  width: 250px;
+  height:350px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform: perspective(2500px);
+  transition: 4s;
+}
+
+.birthdayCard:hover {
+  transform: perspective(2500px) rotate(5deg);
+  box-shadow: inset 100px 20px 100px rgba(0,0,0,.15), 0 10px 100px rgba(0,0,0,0.3);
+}
+
+.birthdayCard:hover .cardFront {
+  transform: rotateY(-160deg); 
+}
+
+.birthdayCard:hover .front-text {
+  display: none;
+}
+
+.birthdayCard:hover .wrap-deco {
+  display: none;
+}
+
+.birthdayCard:hover .wrap-decoTwo {
+  display: none;
+}
+
+.birthdayCard:hover .plate {
+  display: none;
+}
+
+.cardFront {
+  position: relative;
+  background-color: #fff;
+  width: 250px;
+  height:350px;
+  overflow: hidden;
+  transform-origin: left;
+  box-shadow: inset 100px 20px 100px rgba(0,0,0,.13), 30px 0 50px rgba(0,0,0,0.1);
+  transition: .4s;
+}
+/* =============== */
+
+
+
+
+/* Header Text */
+.happy, .toyou {
+  position: relative;
+  text-align: center;
+  backface-visibility: hidden;
+}
+
+.happy {
+  font-family: Permanent Marker;
+  font-size: 27px; 
+  top:198px;
+}
+
+.toyou {
+  font-family: Caveat Brush;
+  font-size: 35px; 
+  top:125px;
+}
+
+.bday {
+  position: relative;
+  font-family: Permanent Marker;
+  font-size: 31px;
+  text-align: center;
+  top:163px;
+}
+/* =========== */
+
+
+
+/* Decoration */
+.wrap-deco {
+  position: absolute;
+  top:-230px;
+  left:-200px;
+}
+
+.decorations {
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  border: 3px solid #333;
+  border-radius: 50%;
+}
+
+.decorations:before, .decorations:after, .decorationsTwo:before, .decorationsTwo:after, .decorationsThree:before, .decorationsThree:after {
+  content:"";
+  position: absolute;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  width:0;
+  height:0;
+}
+
+.decorations:before {
+  border-top: 40px solid #f15bb5;
+  top:297px;
+  left:210px;
+  transform: rotate(-5deg);
+}
+
+.decorations:after{
+  border-top: 40px solid #f4d35e;
+  top:288px;
+  left:260px;
+  transform: rotate(-17deg);
+}
+
+.decorationsTwo:before {
+  border-top: 40px solid #00f5d4;
+  top:268px;
+  left:315px;
+  transform: rotate(-30deg);
+}
+
+.decorationsTwo:after, .decorationsThree:after {
+  border-top: 40px solid #9b5de5;
+  top:238px;
+  left:355px;
+  transform: rotate(-40deg);
+}
+
+.wrap-decoTwo {
+  transform: scaleX(-1);
+  position: absolute;
+  top:-230px;
+  left:445px; 
+}
+
+.decorationsThree:before {
+  border-top: 40px solid #00bbf9;
+  top:268px;
+  left:315px;
+  transform: rotate(-30deg);
+}
+
+
+
+/* Cat Paw */
+.pad {
+    width: 12px;
+    height: 14px;
+    background-color: #606060;
+    -webkit-border-radius: 63px 63px 63px 63px / 108px     108px 72px 72px;
+    border-radius: 50%  50%  50%  50%  / 70%   60%         40%  40%;
+    display: block;
+    position: absolute;
+}       
+.large {
+   width: 35px;
+   height: 32px;
+   transform: rotate(30deg);
+   left: 120px;
+   top: 50px;
+} 
+.small-1 {
+   transform: rotate(0deg);
+   left: 120px;
+   top: 38px;
+}
+.small-2 {
+   transform: rotate(10deg);
+   left: 137px;
+   top: 35px;
+}  
+.small-3 {
+   transform: rotate(40deg);
+   position: absolute;
+   left: 152px;
+   top: 45px;
+}
+.small-4 {
+   transform: rotate(60deg);
+   position: absolute;
+   left: 156px;
+   top: 65px;
+}
+.paw{
+    opacity: 0;
+    position: absolute;
+    left: 100px;
+    top: 420px;
+    transform: rotate(-60deg);
+    -webkit-animation: walk 3s linear infinite;
+    animation: /*keyframe*/walk /*duration*/3s /*transition*/linear /*repeat*/infinite;
+}
+
+/* walking effect animation keyframes */
+@-webkit-keyframes walk {
+    25%  {opacity: 1;}
+    100% {opacity: 0;}
+  }
+      
+  @keyframes walk {
+    /* appear */
+    25%  {opacity: 1;}
+    /* disappear */
+    100% {opacity: 0;}
+  }
+
+
+
+/* Cake */
+.plate {
+  position: absolute;
+  width: 130px;
+  height: 5px;
+  background-color: #00bbf9;
+  left:60px;
+  top:213px;
+}
+
+.cake {
+  position: absolute;
+  overflow: hidden;
+  width:100px;
+  height: 50px;
+  background-color: #f15bb5;
+  border-radius: 10px 10px 0 0;
+  top:-50px;
+  left:15px;
+  box-shadow: inset 0 -15px #FFFDD0, inset 0 15px #432818;
+}
+
+.cake:before {
+  content:"";
+  position: absolute;
+  background-color: #432818;
+  width:10px;
+  height:20px;
+  top:5px;
+  border-radius:20px;
+  box-shadow: 10px 5px #f15bb5, 20px 0px #432818, 30px 2px #f15bb5, 40px 5px #432818, 50px 5px #f15bb5, 60px 0px #432818, 70px 5px #f15bb5, 80px 5px #432818, 90px 5px #f15bb5;
+}
+
+.plate:before {
+  content:"";
+  position: absolute;
+  background: repeating-linear-gradient(-45deg, #9b5de5, #9b5de5 3px, #00f5d4 3px, #00f5d4 6px);
+  width:7px;
+  height: 25px;
+  top:-75px;
+  left:61px;
+}
+
+.plate:after {
+  content:"";
+  position: absolute;
+  width:1px;
+  height: 5px;
+  background-color: #333;
+  top:-80px;
+  left:64px;
+}
+
+.flame {
+  position: absolute;
+  background-color: #fb5607;
+  border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+  transform: rotate(-45deg);
+  width:15px;
+  height:15px;
+  opacity:0.7;
+  top:-93px;
+  left:57px;
+}
+/* ======== */
+
+
+
+.cardInside {
+  position: absolute;
+  background-color: #fff;
+  width: 250px;
+  height:350px;
+  z-index:-1;
+  left:0;
+  top:0;
+  box-shadow: inset 100px 20px 100px rgba(0,0,0,0.2);
+}
+
+.inside-text {
+  position: relative;
+  top:-160px;
+  transform: scale(0.7);
+}
+
+.wishes {
+  position: relative;
+  top:-100px;
+  margin: 25px;
+}
+
+p {
+  font-family: Indie Flower;
+  font-size: 12px;
+  color: #333;
+}
+
+.name {
+  margin-left:150px;
+}
+
